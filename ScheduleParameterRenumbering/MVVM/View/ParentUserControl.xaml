@@ -1,0 +1,54 @@
+﻿<UserControl x:Class="ScheduleParameterRenumbering.ParentUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:uc="clr-namespace:ScheduleParameterRenumbering"
+             xmlns:materialDesign="clr-namespace:MaterialDesignThemes.Wpf;assembly=MaterialDesignThemes.Wpf"
+             xmlns:Control="clr-namespace:System.Windows.Controls;assembly=DotNetProjects.Input.Toolkit"
+             xmlns:system="clr-namespace:System;assembly=mscorlib"
+             mc:Ignorable="d"
+             d:DesignHeight="300"
+             d:DesignWidth="250"
+             Background="Transparent">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="85"></RowDefinition>
+            <RowDefinition Height="85"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0"
+                    Orientation="Vertical"
+                    HorizontalAlignment="Left">
+     
+            <uc:TextBoxUserControl x:Name="txtRackIdMapping"
+                                   Width="280"
+                                   Label="Prefix Name">
+            </uc:TextBoxUserControl>
+        </StackPanel>
+        <StackPanel Grid.Row="1"
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Left">
+            <uc:TextBoxUserControl x:Name="txtPrefix" Width="280"
+                                   Label="Rack ID Param (Map)"
+                                  >
+            </uc:TextBoxUserControl>
+        </StackPanel>
+        <StackPanel Grid.Row="2">
+            <CheckBox Content="Skip Last Row" IsChecked="False" x:Name="chkSkipLastRow"></CheckBox>
+        </StackPanel>
+        <StackPanel Grid.Row="3">
+            <Button x:Name="btnSubmit" Content="Re-Numbering" Click="btnSubmit_Click"></Button>
+        </StackPanel>
+    </Grid>
+</UserControl>
